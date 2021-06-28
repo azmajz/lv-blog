@@ -53,7 +53,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <span>© Copyright {{date('Y')}} Lv-blog</span>
+                <span>© Copyright {{date('Y')}} CBS</span>
             </div>
         </div>
     </div>
