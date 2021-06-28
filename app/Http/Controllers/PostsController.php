@@ -95,7 +95,8 @@ class PostsController extends Controller
             'title' => 'required|max:50',
             'body' => 'required|max:500',
             'category_id' => 'required',
-            'post_image' => 'required|mimes:jpeg,png,jpg,gif,svg|max:1024',
+            'post_image' => 'required',
+            // 'post_image' => 'required|mimes:jpeg,png,jpg,gif,svg|max:1024',
         ]);
 
         $post = new Post();
@@ -105,11 +106,11 @@ class PostsController extends Controller
         $post->user_id = auth()->user()->id;
 
         //cover image
-        $image_file = request('post_image');
-        $image = Image::make($image_file);
-        Response::make($image->encode('jpeg'));
+        // $image_file = request('post_image');
+        // $image = Image::make($image_file);
+        // Response::make($image->encode('jpeg'));
 
-        $post->post_image = $image;
+        $post->post_image = "https://firebasestorage.googleapis.com/v0/b/collaborative-blogging-site.appspot.com/o/".$request->post_image."?alt=media";
         $post->save();
         return redirect('/admin/posts')->with(['success-msg'=>'Post Created Successfully']);
 
@@ -162,12 +163,18 @@ class PostsController extends Controller
             // 'author_id' => 'required',
             // 'post_image' => 'required',
         ]);
-        
+
         $post= Post::findOrFail($id);
         $post->title = $request->title;
         $post->body = $request->body;
         $post->category_id = $request->category_id;
-        // $post->post_image = 'image';
+
+        $post_image = $request->post_image;
+        
+        if($post_image!=null) {
+            $post->post_image = "https://firebasestorage.googleapis.com/v0/b/collaborative-blogging-site.appspot.com/o/".$request->post_image."?alt=media";
+        }
+
         $post->save();
         return redirect('/admin/posts')->with(['success-msg'=>'Post Updated Successfully']);
  
