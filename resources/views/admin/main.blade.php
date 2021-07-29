@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ADMIN {{config('app.name')}}</title>
-    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('css/font-awesome.css')}}">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{ str_replace('http://','https://',url('css/bootstrap.min.css')) }}" />
+    <link rel="stylesheet" href="{{ str_replace('http://','https://',url('css/font-awesome.css')) }}" />
+    <link rel="stylesheet" href="{{ str_replace('http://','https://',url('css/style.css')) }}" />
 </head>
 
 <body>
@@ -74,7 +74,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <span>© Copyright {{date('Y')}} CBS</span>
+                    <span>© Copyright {{date('Y')}} {{config('app.name')}}</span>
                 </div>
             </div>
         </div>
