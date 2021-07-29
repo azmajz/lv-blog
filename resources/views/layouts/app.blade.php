@@ -4,9 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{{config('app.name')}}</title>
-        <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" />
-        <link rel="stylesheet" href="{{asset('css/font-awesome.css')}}">
-        <link rel="stylesheet" href="{{asset('css/style.css')}}">
+        <link rel="stylesheet" href="{{url('css/bootstrap.min.css')}}" />
+        <link rel="stylesheet" href="{{url('css/font-awesome.css')}}">
+        <link rel="stylesheet" href="{{url('css/style.css')}}">
 </head>
 <body>
 <div id="header">
@@ -53,7 +53,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <span>© Copyright {{date('Y')}} Lv-blog</span>
+                <span>© Copyright {{date('Y')}} Lv-blogger</span>
             </div>
         </div>
     </div>
