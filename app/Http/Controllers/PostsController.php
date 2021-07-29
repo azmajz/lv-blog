@@ -92,8 +92,8 @@ class PostsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'title' => 'required|max:50',
-            'body' => 'required|max:500',
+            'title' => 'required|max:60',
+            'body' => 'required|max:5000',
             'category_id' => 'required',
             'post_image' => 'required',
             // 'post_image' => 'required|mimes:jpeg,png,jpg,gif,svg|max:1024',
