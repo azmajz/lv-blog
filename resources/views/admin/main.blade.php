@@ -19,7 +19,7 @@
             <div class="row">
                 <!-- LOGO -->
                 <div class="col-md-2">
-                    <a href="post.php"><img class="logo" src="{{asset('images/blogger-site.jpg')}}"></a>
+                    <a href="{{url('/')}}/post.php"><img class="logo" src="{{asset('images/blogger-site.jpg')}}"></a>
                 </div>
                 <!-- /LOGO -->
                 <!-- LOGO-Out -->
