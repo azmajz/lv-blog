@@ -53,7 +53,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <span>© Copyright {{date('Y')}} LV-Blogger</span>
+                <span>© Copyright {{date('Y')}} {{config('app.name')}}</span>
             </div>
         </div>
     </div>
